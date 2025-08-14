@@ -1,13 +1,14 @@
 package org.github.juniottemp.domain.services;
 
+import org.github.juniottemp.config.exceptions.TipoChaveNaoEncontradaException;
 import org.github.juniottemp.domain.model.Client;
 
 public interface IClientService {
-    Boolean save(Client client);
+    Boolean save(Client client) throws TipoChaveNaoEncontradaException;
 
-    Client findByCpf(String cpf);
+    Client findByCpf(Long cpf);
 
-    void excluir(String cpf);
+    void excluir(Long cpf);
 
-    void atualizar(Client client);
+    void atualizar(Client client) throws TipoChaveNaoEncontradaException;
 }

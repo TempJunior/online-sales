@@ -1,8 +1,8 @@
 package org.github.juniottemp.domain.model;
 
-public class Client {
+public class Client implements Persistente {
     private String nome;
-    private String cpf;
+    private Long cpf;
     private Banco banco;
     private Cidade cidade;
 
@@ -22,11 +22,11 @@ public class Client {
         this.nome = nome;
     }
 
-    public String getCpf() {
+    public Long getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(Long cpf) {
         this.cpf = cpf;
     }
 

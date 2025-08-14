@@ -1,35 +1,38 @@
 package org.github.juniottemp.mocks;
 
+import org.github.juniottemp.config.exceptions.TipoChaveNaoEncontradaException;
 import org.github.juniottemp.domain.model.Client;
 import org.github.juniottemp.domain.services.IClienteDAO;
 
+import java.util.Collection;
 import java.util.List;
 
 public class IClientDaoMock implements IClienteDAO {
+
     @Override
-    public Client getByCpf(String cpf) {
+    public Boolean cadastrar(Client entity) throws TipoChaveNaoEncontradaException {
+        return null;
+    }
+
+    @Override
+    public void excluir(Long valor) {
+
+    }
+
+    @Override
+    public void alterar(Client entity) throws TipoChaveNaoEncontradaException {
+
+    }
+
+    @Override
+    public Client consultar(Long valor) {
         Client client = new Client();
-        client.setCpf(cpf);
-        return client;
+        client.setCpf(valor);
+        return null;
     }
 
     @Override
-    public List<Client> getAll() {
+    public Collection<Client> buscarTodos() {
         return List.of();
-    }
-
-    @Override
-    public Boolean save(Client client) {
-        return true;
-    }
-
-    @Override
-    public void update(Client client) {
-
-    }
-
-    @Override
-    public void delete(String cpf) {
-
     }
 }

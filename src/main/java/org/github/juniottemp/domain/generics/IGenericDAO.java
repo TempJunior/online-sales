@@ -1,5 +1,10 @@
 package org.github.juniottemp.domain.generics;
 
+import org.github.juniottemp.config.exceptions.TipoChaveNaoEncontradaException;
+import org.github.juniottemp.domain.model.Persistente;
+
+import java.util.Collection;
+
 public interface IGenericDAO <T extends Persistente> {
 
     /**

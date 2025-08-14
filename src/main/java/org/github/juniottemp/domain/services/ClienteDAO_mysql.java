@@ -1,33 +1,19 @@
 package org.github.juniottemp.domain.services;
 
+import org.github.juniottemp.domain.generics.GenericDAO;
 import org.github.juniottemp.domain.model.Client;
 
 import java.util.List;
 
-public class ClienteDAO_mysql implements IClienteDAO {
+public class ClienteDAO_mysql extends GenericDAO<Client> implements IClienteDAO {
 
     @Override
-    public Client getByCpf(String cpf) {
-        return null;
+    public Class<Client> getTipoClasse() {
+        return Client.class;
     }
 
     @Override
-    public List<Client> getAll() {
-        return List.of();
-    }
-
-    @Override
-    public Boolean save(Client client) {
-        return true;
-    }
-
-    @Override
-    public void update(Client client) {
-
-    }
-
-    @Override
-    public void delete(String cpf) {
+    public void atualiarDados(Client entity, Client entityCadastrado) {
 
     }
 }

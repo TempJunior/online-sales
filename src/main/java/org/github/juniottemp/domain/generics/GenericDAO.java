@@ -1,5 +1,16 @@
 package org.github.juniottemp.domain.generics;
 
+import org.github.juniottemp.config.annotation.TipoChave;
+import org.github.juniottemp.config.exceptions.TipoChaveNaoEncontradaException;
+import org.github.juniottemp.domain.SingletonMap;
+import org.github.juniottemp.domain.model.Persistente;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Collection;
+import java.util.Map;
+
 public abstract class GenericDAO<T extends Persistente> implements IGenericDAO<T> {
 
     //protected Map<Class, Map<Long, T>> map = new HashMap<>();

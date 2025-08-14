@@ -1,5 +1,6 @@
 package org.github.juniottemp.domain.services;
 
+import org.github.juniottemp.config.exceptions.TipoChaveNaoEncontradaException;
 import org.github.juniottemp.domain.model.Client;
 
 public class ClientServices implements IClientService{
@@ -11,22 +12,22 @@ public class ClientServices implements IClientService{
     }
 
     @Override
-    public Boolean save(Client client) {
-        return clienteDAO.save(client);
+    public Boolean save(Client client) throws TipoChaveNaoEncontradaException {
+        return clienteDAO.cadastrar(client);
     }
 
     @Override
-    public Client findByCpf(String cpf) {
-        return clienteDAO.getByCpf(cpf);
+    public Client findByCpf(Long cpf) {
+        return clienteDAO.consultar(cpf);
     }
 
     @Override
-    public void excluir(String cpf) {
-        clienteDAO.delete(cpf);
+    public void excluir(Long cpf) {
+        clienteDAO.excluir(cpf);
     }
 
     @Override
-    public void atualizar(Client client) {
-        clienteDAO.update(client);
+    public void atualizar(Client client) throws TipoChaveNaoEncontradaException {
+        clienteDAO.alterar(client);
     }
 }
